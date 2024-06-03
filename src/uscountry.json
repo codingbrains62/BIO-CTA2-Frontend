@@ -1,0 +1,38 @@
+[
+    {
+        "value": "US",
+        "label": "United States of America"
+    },
+    {
+        "value": "AS",
+        "label": "American Samoa"
+    },
+    {
+        "value": "GU",
+        "label": "Guam"
+    },
+    {
+        "value": "MH",
+        "label": "Marshall Islands"
+    },
+    {
+        "value": "FM",
+        "label": "Micronesia, Federated States"
+    },
+    {
+        "value": "MP",
+        "label": "Northern Mariana Islands"
+    },
+    {
+        "value": "PW",
+        "label": "Palau"
+    },
+    {
+        "value": "PR",
+        "label": "Puerto Rico"
+    },
+    {
+        "value": "VI",
+        "label": "U.S. Virgin Islands"
+    }
+]

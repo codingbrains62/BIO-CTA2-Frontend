@@ -1,0 +1,18 @@
+[
+    {
+        "value": "license",
+        "label": "State issued driver's license"
+    },
+    {
+        "value": "stateID",
+        "label": "State/Local/tribe-issued ID"
+    },
+    {
+        "value": "passport",
+        "label": "U.S Passport"
+    },
+    {
+        "value": "foreign",
+        "label": "Foreign Passport"
+    }
+]

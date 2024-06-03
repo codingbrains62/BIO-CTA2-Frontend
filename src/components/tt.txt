@@ -1,0 +1,20 @@
+Client:  Yeah, my kid wants to say hi. Hi.
+CB:  What is his name?
+Client:  What's that?
+CB:  I was asking what is your kids name?
+Client: Agassiz.
+Cb:  Okay
+Client: So I was able, yeah, I was able to review the, your plan and that seemed about right to me.
+        One of the things that I have is the question about whether or not Okay so if you are going to do the design and implementation of the XML doc of the xml document to have it be filable.
+        That's still going to include the web form, collecting the web form in the
+        Javascript Data format that we originated, right?
+CB: Yes
+Client: if i am understanding it, is you are going to create a translator that translates all the data that we collect using the form and then you are going to create an XML document from that JSON object, right?
+CB: Yes
+Client: Okay, Perfect.
+        That is exactly what i want and what we both want actually. and
+         so according to the number of the hoursthat you got there, you have like 180 or something like that or you know in that range.
+         What was i thinking is if i understand if i correct there was a price break at 250 was there not?
+         250 price sorryt can you please let me know what are referring if we if we just buy 250 hours is there not a price break at that point ?
+CB: yse
+there is a like we will share some at, you know free hours for you if you buy the 250 hours so right.
