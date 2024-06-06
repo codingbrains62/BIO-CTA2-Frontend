@@ -137,7 +137,7 @@
 												<div class="col-md-8">
 													<input type="radio" class="radio-start"
 														v-model="formData.Initial_report" name="reportType"
-														:value="true" @change="handleRadioChange('Initial_report')"  />
+														:value="true" @change="handleRadioChange('Initial_report')" />
 												</div>
 											</div>
 										</li>
@@ -148,7 +148,8 @@
 												</div>
 												<div class="col-md-8">
 													<input type="radio" class="radio-start" :value="true"
-														name="reportType" v-model="formData.Correct_prior_report" @change="handleRadioChange('Correct_prior_report')" />
+														name="reportType" v-model="formData.Correct_prior_report"
+														@change="handleRadioChange('Correct_prior_report')" />
 												</div>
 											</div>
 										</li>
@@ -159,7 +160,8 @@
 												</div>
 												<div class="col-md-8">
 													<input type="radio" class="radio-start" :value="true"
-														name="reportType" v-model="formData.Update_prior_report" @change="handleRadioChange('Update_prior_report')"/>
+														name="reportType" v-model="formData.Update_prior_report"
+														@change="handleRadioChange('Update_prior_report')" />
 												</div>
 											</div>
 										</li>
@@ -170,7 +172,8 @@
 												</div>
 												<div class="col-md-8">
 													<input type="radio" class="radio-start" :value="true" id="css"
-														name="reportType" v-model="formData.Newly_exempt_entity" @change="handleRadioChange('Newly_exempt_entity')"/>
+														name="reportType" v-model="formData.Newly_exempt_entity"
+														@change="handleRadioChange('Newly_exempt_entity')" />
 												</div>
 											</div>
 										</li>
@@ -406,7 +409,8 @@
 									<div class="col-xl-1 col-md-2 col-sm-2">
 										<div class="btn-wrapper d-flex">
 											<button @click.prevent="addAlter()" class="add-btn">+</button>
-											<button @click.prevent="removeAlter(n)" class="remove-btn" :disabled="n === 0">-</button>
+											<button @click.prevent="removeAlter(n)" class="remove-btn"
+												:disabled="n === 0">-</button>
 										</div>
 									</div>
 								</div>
@@ -1040,12 +1044,16 @@
 											<label><span class="red">*</span>Identifying document image</label>
 										</div>
 										<div class="col-md-7">
-											<input class="file btn btn-primary" type="file" ref="fileInput" @change="attachFileApplicant" />
-											<button type="button" class="file btn btn-primary mx-1" @click="removeAttachmentapplicant">Remove Attachment
+											<input class="file btn btn-primary" type="file" ref="fileInput"
+												@change="attachFileApplicant" />
+											<button type="button" class="file btn btn-primary mx-1"
+												@click="removeAttachmentapplicant">Remove Attachment
 											</button><br>
-											<img v-if="attachedImageApplicant" :src="attachedImageApplicant" alt="Attached Image" style="max-width: 100px; margin-top: 10px;" />
+											<img v-if="attachedImageApplicant" :src="attachedImageApplicant"
+												alt="Attached Image" style="max-width: 100px; margin-top: 10px;" />
 											<!-- <input class="f-input form-input" v-if="attachedImageApplicant" v-model="attachedFileNameApplicant" readonly /> -->
-											<div v-if="attachedFileNameApplicant" class="file-name" style="margin-top: 10px;">{{ attachedFileNameApplicant }}</div>
+											<div v-if="attachedFileNameApplicant" class="file-name"
+												style="margin-top: 10px;">{{ attachedFileNameApplicant }}</div>
 											<div v-if="fileError" class="text-danger">{{ fileError }}</div>
 										</div>
 									</div>
@@ -1423,11 +1431,15 @@
 											<label><span class="red">*</span>Identifying document image</label>
 										</div>
 										<div class="col-md-7">
-											<input class="file btn btn-primary" type="file" ref="fileInput2" @change="attachFile" />
-											<button type="button" class="file btn btn-primary mx-1" @click="removeAttachment">Remove Attachment</button><br>
-											<img v-if="attachedImage" :src="attachedImage" alt="Attached Image" style="max-width: 100px; margin-top: 10px;" />
+											<input class="file btn btn-primary" type="file" ref="fileInput2"
+												@change="attachFile" />
+											<button type="button" class="file btn btn-primary mx-1"
+												@click="removeAttachment">Remove Attachment</button><br>
+											<img v-if="attachedImage" :src="attachedImage" alt="Attached Image"
+												style="max-width: 100px; margin-top: 10px;" />
 											<!-- <input class="f-input form-input" v-if="attachedImage" v-model="attachedFileName" readonly /> -->
-											<div v-if="attachedFileName" class="file-name" style="margin-top: 8px;">{{ attachedFileName }}</div>
+											<div v-if="attachedFileName" class="file-name" style="margin-top: 8px;">{{
+											attachedFileName }}</div>
 											<div v-if="fileError" class="text-danger">{{ fileError }}</div>
 										</div>
 									</div>
@@ -1487,13 +1499,13 @@ export default {
 	},
 	data() {
 		return {
-			    attachedImageApplicant: null,
-				attachedFileNameApplicant: '',
-				attachedImage: null,
-				attachedFileName:'',
-				fileError: '',
-				fileInput: null,
-				divKey: 0,
+			attachedImageApplicant: null,
+			attachedFileNameApplicant: '',
+			attachedImage: null,
+			attachedFileName: '',
+			fileError: '',
+			fileInput: null,
+			divKey: 0,
 			jurisdictionCountry: jurisdictionCountry,
 			uscountry: uscountry,
 			states: states,
@@ -1507,6 +1519,7 @@ export default {
 					Alternate_name: "",
 				},
 			],
+			
 			beneficial: [
 				{
 					name: "",
@@ -1557,6 +1570,7 @@ export default {
 				ZIP_Code: "",
 				Exit_reporting_company: "",
 
+
 				FinCEN_ID: "",
 				Individual_last_name: "",
 				First_name: "",
@@ -1576,7 +1590,6 @@ export default {
 				State_app: "",
 				local: "",
 				tribal_desc: "",
-
 				minor_child: "",
 				Beneficial_fincenID: "",
 				entity_beneficial: "",
@@ -1683,52 +1696,56 @@ export default {
 	},
 	methods: {
 		attachFileApplicant(event) {
-      const file = event.target.files[0];
-      if (file) {
-        this.attachedFileNameApplicant = file.name;
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          this.attachedImageApplicant = e.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-    },
-    removeAttachmentapplicant() {
-      this.attachedImageApplicant = null;
-      this.attachedFileNameApplicant = '';
-      // Clear file input if needed
-      
-        if (this.$refs.fileInput) {
-          this.$refs.fileInput.value = '';
-        }
-		this.divKey++;
-    },
+			const file = event.target.files[0];
+			if (file) {
+				this.attachedFileNameApplicant = file.name;
+				this.strIDocImage = file.name;
+				this.strDocImageType = file.type;
+				const reader = new FileReader();
+				reader.onload = (e) => {
+					this.attachedImageApplicant = e.target.result;
+				};
+				reader.readAsDataURL(file);
+			}
+		},
+		removeAttachmentapplicant() {
+			this.attachedImageApplicant = null;
+			this.attachedFileNameApplicant = '';
+			// Clear file input if needed
+			this.strIDocImage = '';
+			this.strDocImageType = '';
 
-	attachFile(event) {
-      const file = event.target.files[0];
-      if (file) {
-        this.attachedFileName = file.name;
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          this.attachedImage = e.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-    },
-	removeAttachment() {
-      this.attachedImage = null;
-      this.attachedFileName = '';
-      // Clear file input if needed
-      
-        if (this.$refs.fileInput2) {
-          this.$refs.fileInput2.value = '';
-        }
-		this.divKey++;
-    },
+			if (this.$refs.fileInput) {
+				this.$refs.fileInput.value = '';
+			}
+			this.divKey++;
+		},
+		attachFile(event) {
+			const file = event.target.files[0];
+			if (file) {
+				this.attachedFileName = file.name;
+				this.strIDocImag = file.name;
+				this.strDocImageTyp = file.type;
+				const reader = new FileReader();
+				reader.onload = (e) => {
+					this.attachedImage = e.target.result;
+				};
+				reader.readAsDataURL(file);
+			}
+		},
+		removeAttachment() {
+			this.attachedImage = null;
+			this.attachedFileName = '';
+			// Clear file input if needed
 
+			if (this.$refs.fileInput2) {
+				this.$refs.fileInput2.value = '';
+			}
+			this.divKey++;
+		},
 		handleRadioChange(fieldName) {
-        alert(`${fieldName} selected`);
-    },
+			alert(`${fieldName} selected`);
+		},
 		scrollToElement() {
 			window.scrollTo({
 				top: 0,
@@ -1777,7 +1794,7 @@ export default {
 				Tax_Identification_type: "",
 				Jurisdiction_tax_id: "",
 				date: "",
-                
+
 
 				FinCEN_Identifier: "",
 				Foreign_Pooled: "",
@@ -2264,98 +2281,93 @@ export default {
 
 			// Define the data structures
 			const CTAFiling = {
-				bInitialReport: Boolean(this.formData.Initial_report),
-				bCorrectionReport: Boolean(this.formData.Correct_prior_report),
-				bUpdateReport: Boolean(this.formData.Update_prior_report),
-				bExempt: Boolean(this.formData.Newly_exempt_entity),
+				bInitialReport: Boolean(this.formData?.Initial_report),
+				bCorrectionReport: Boolean(this.formData?.Correct_prior_report),
+				bUpdateReport: Boolean(this.formData?.Update_prior_report),
+				bExempt: Boolean(this.formData?.Newly_exempt_entity)
 			};
 
 			const CurrentCompany = {
-				strLegalName: this.formData.Legal_name,
-				strTaxIDType: this.formData.Tax_Identification_type,
-				strTaxIDNumber: this.formData.Tax_Identification_number,
-				strTaxIDJurisdiction: this.formData.Jurisdiction_tax_id,
+				strLegalName: this.formData?.Legal_name,
+				strTaxIDType: this.formData?.Tax_Identification_type,
+				strTaxIDNumber: this.formData?.Tax_Identification_number,
+				strTaxIDJurisdiction: this.formData?.Jurisdiction_tax_id
 			};
 
 			const ReportingCompany = {
-				bGetFinCENID: Boolean(this.formData.FinCEN_Identifier),
-				bFPIV: Boolean(this.formData.Foreign_Pooled),
-				strCompanyName: this.formData.Reporting_Company,
-				arrDBAs: this.formData.arrDBAs || [],
-				strTaxIDType: this.formData.Tax_Identification,
-				strTaxIDNumber: this.formData.Identification,
-				strTaxIDJurisdiction: this.formData.foreign_tax,
-				strCompanyCountry: this.formData.formation,
-				strCompanyState: this.formData.State_of_formation,
-				strCompanyTribe: this.formData.Tribal_jurisdiction,
-				strCompanyTribeOther: this.formData.other_Tribe,
-				strForeignState: this.formData.State_of_formation,
-				strForeignTribeJuris: this.formData.Tribal_first_jurisdiction,
-				strForeignOtherTribe: this.formData.other_Tribe,
-				strCompanyAddress: this.formData.Address,
-				strCompanyCity: this.formData.City,
-				strCompanyTerritory: this.formData.Territory,
-				strCompanyZipcode: this.formData.ZIP_Code,
-				bExistingReportingCompany: Boolean(
-					this.formData.Exit_reporting_company
-				),
-				bCreatedBeforeJan12024: Boolean(this.formData.Created_before_Jan12024),
+				bGetFinCENID: Boolean(this.formData?.FinCEN_Identifier),
+				bFPIV: Boolean(this.formData?.Foreign_Pooled),
+				strCompanyName: this.formData?.Reporting_Company,
+				arrDBAs: this.formData?.arrDBAs || [],
+				strTaxIDType: this.formData?.Tax_Identification,
+				strTaxIDNumber: this.formData?.Identification,
+				strTaxIDJurisdiction: this.formData?.foreign_tax,
+				strCompanyCountry: this.formData?.formation,
+				strCompanyState: this.formData?.State_of_formation,
+				strCompanyTribe: this.formData?.Tribal_jurisdiction,
+				strCompanyTribeOther: this.formData?.other_Tribe,
+				strForeignState: this.formData?.State_of_formation,
+				strForeignTribeJuris: this.formData?.Tribal_first_jurisdiction,
+				strForeignOtherTribe: this.formData?.other_Tribe,
+				strCompanyAddress: this.formData?.Address,
+				strCompanyCity: this.formData?.City,
+				strCompanyTerritory: this.formData?.Territory,
+				strCompanyZipcode: this.formData?.ZIP_Code,
+				bExistingReportingCompany: Boolean(this.formData?.Exit_reporting_company),
+				bCreatedBeforeJan12024: Boolean(this.formData?.Created_before_Jan12024)
 			};
 
-			const CompanyApplicant = this.formData.CompanyApplicant || [
-				{
-					strFinCENID: this.formData.FinCEN_ID,
-					strFirstName: this.formData.First_name,
-					strMiddleName: this.formData.Middle_name,
-					strLastName: this.formData.Individual_last_name,
-					strSuffix: this.formData.Suffix,
-					strDOB: this.formData.Date,
-					CurrentAddress: {
-						bBussinessAddress: Boolean(this.formData.Business_beneficial),
-						bResidentialAddress: Boolean(this.formData.Residential_applicant),
-						strAddress: this.formData.Address_number,
-						strCity: this.formData.City_applicant,
-						strJurisdiction: this.formData.Country_jurisdiction,
-						strState: this.formData.State_applicant,
-						strZipcode: this.formData.Foreign_postal,
-					},
-					strIDDocType: this.formData.Identififying_document,
-					strIDDocNumber: this.formData.Identififying_number,
-					strIDDocJurisdiction: this.formData.Country_jurisdiction,
-					strIDDocState: this.formData.State_app,
-					strIDDocTribe: this.formData.local,
-					strIDDocTribeOther: this.formData.tribal_desc,
-					strIDocImage: this.formData.strIDocImage,
-					strDocImageType: this.formData.strDocImageType,
+			const CompanyApplicant = this.formData?.CompanyApplicant || [{
+				strFinCENID: this.formData?.FinCEN_ID,
+				strFirstName: this.formData?.First_name,
+				strMiddleName: this.formData?.Middle_name,
+				strLastName: this.formData?.Individual_last_name,
+				strSuffix: this.formData?.Suffix,
+				strDOB: this.formData?.Date,
+				CurrentAddress: {
+					bBussinessAddress: Boolean(this.formData?.Business_beneficial),
+					bResidentialAddress: Boolean(this.formData?.Residential_applicant),
+					strAddress: this.formData?.Address_number,
+					strCity: this.formData?.City_applicant,
+					strJurisdiction: this.formData?.Country_jurisdiction,
+					strState: this.formData?.State_applicant,
+					strZipcode: this.formData?.Foreign_postal
 				},
-			];
+				strIDDocType: this.formData?.Identififying_document,
+				strIDDocNumber: this.formData?.Identififying_number,
+				strIDDocJurisdiction: this.formData?.Country_jurisdiction,
+				strIDDocState: this.formData?.State_app,
+				strIDDocTribe: this.formData?.local,
+				strIDDocTribeOther: this.formData?.tribal_desc,
+				strIDocImage: this.strIDocImage,
+				strDocImageType: this.strDocImageType
+			}];
 
-			const BOI = this.formData.BOI || [
-				{
-					strFinCENID: this.formData.Beneficial_fincenID,
-					bExemptEntity: Boolean(this.formData.entity_beneficial),
-					strFirstName: this.formData.Beneficial_first_name,
-					strMiddleName: this.formData.Beneficial_Middle_name,
-					strLastNameOrgName: this.formData.entity_legal,
-					strSuffix: this.formData.Beneficial_suffix,
-					strDOB: this.formData.Beneficial_date,
-					CurrentAddress: {
-						strAddress: this.formData.Beneficial_Address,
-						strCity: this.formData.Beneficial_city,
-						strJurisdiction: this.formData.Beneficial_country_resi,
-						strState: this.formData.Beneficial_state_resi,
-						strZipcode: this.formData.Beneficial_zipcode,
-					},
-					strIDDocType: this.formData.Beneficial_document_type,
-					strIDDocNumber: this.formData.Beneficial_document_number,
-					strIDDocJurisdiction: this.formData.Beneficial_country,
-					strIDDocState: this.formData.Beneficial_state,
-					strIDDocTribe: this.formData.Beneficial_Local,
-					strIDDocTribeOther: this.formData.Beneficial_Other_local,
-					strIDocImage: this.formData.strIDocImage,
-					strDocImageType: this.formData.strDocImageType,
+			const BOI = this.formData?.BOI || [{
+				strFinCENID: this.formData?.Beneficial_fincenID,
+				bExemptEntity: Boolean(this.formData?.entity_beneficial),
+				strFirstName: this.formData?.Beneficial_first_name,
+				strMiddleName: this.formData?.Beneficial_Middle_name,
+				strLastNameOrgName: this.formData?.entity_legal,
+				strSuffix: this.formData?.Beneficial_suffix,
+				strDOB: this.formData?.Beneficial_date,
+				CurrentAddress: {
+					strAddress: this.formData?.Beneficial_Address,
+					strCity: this.formData?.Beneficial_city,
+					strJurisdiction: this.formData?.Beneficial_country_resi,
+					strState: this.formData?.Beneficial_state_resi,
+					strZipcode: this.formData?.Beneficial_zipcode
 				},
-			];
+				strIDDocType: this.formData?.Beneficial_document_type,
+				strIDDocNumber: this.formData?.Beneficial_document_number,
+				strIDDocJurisdiction: this.formData?.Beneficial_country,
+				strIDDocState: this.formData?.Beneficial_state,
+				strIDDocTribe: this.formData?.Beneficial_Local,
+				strIDDocTribeOther: this.formData?.Beneficial_Other_local,
+				strIDocImage: this.strIDocImag,
+				strDocImageType: this.strDocImageTyp
+			}];
+
 
 			// Generate the XML data
 			let alternateNamesXML = "";
@@ -2422,6 +2434,8 @@ export default {
                 <fc2:StateApp>${this.formData.State_app}</fc2:StateApp>
                 <fc2:Local>${this.formData.local}</fc2:Local>
                 <fc2:TribalDesc>${this.formData.tribal_desc}</fc2:TribalDesc>
+				<fc2:ImageAttachmentType>${this.strDocImageType}</fc2:ImageAttachmentType>
+				<fc2:ImageAttachmentFileName>${this.strIDocImage}</fc2:ImageAttachmentFileName>
             </fc2:CompanyApplicant>
             <fc2:BeneficialOwner>
                 <fc2:Minorchild>${this.formData.minor_child}</fc2:Minorchild>
@@ -2443,6 +2457,8 @@ export default {
                 <fc2:BeneficialState>${this.formData.Beneficial_state}</fc2:BeneficialState>
                 <fc2:BeneficialLocal>${this.formData.Beneficial_Local}</fc2:BeneficialLocal>
                 <fc2:BeneficialOtherLocal>${this.formData.Beneficial_Other_local}</fc2:BeneficialOtherLocal>
+				<fc2:ImageAttachmentType>${this.strDocImageTyp}</fc2:ImageAttachmentType>
+				<fc2:ImageAttachmentFileName>${this.strIDocImag}</fc2:ImageAttachmentFileName>
             </fc2:BeneficialOwner>
         </fc2:BoirFormList>
     </fc2:root>
