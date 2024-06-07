@@ -1519,7 +1519,7 @@ export default {
 					Alternate_name: "",
 				},
 			],
-			
+
 			beneficial: [
 				{
 					name: "",
@@ -2433,7 +2433,7 @@ export default {
                 <fc2:CountryJurisdiction>${this.formData.Country_jurisdiction}</fc2:CountryJurisdiction>
                 <fc2:StateApp>${this.formData.State_app}</fc2:StateApp>
                 <fc2:Local>${this.formData.local}</fc2:Local>
-                <fc2:TribalDesc>${this.formData.tribal_desc}</fc2:TribalDesc>
+				<fc2:TribalDesc>${this.formData.tribal_desc}</fc2:TribalDesc>
 				<fc2:ImageAttachmentType>${this.strDocImageType}</fc2:ImageAttachmentType>
 				<fc2:ImageAttachmentFileName>${this.strIDocImage}</fc2:ImageAttachmentFileName>
             </fc2:CompanyApplicant>
@@ -2456,7 +2456,7 @@ export default {
                 <fc2:BeneficialCountry>${this.formData.Beneficial_country}</fc2:BeneficialCountry>
                 <fc2:BeneficialState>${this.formData.Beneficial_state}</fc2:BeneficialState>
                 <fc2:BeneficialLocal>${this.formData.Beneficial_Local}</fc2:BeneficialLocal>
-                <fc2:BeneficialOtherLocal>${this.formData.Beneficial_Other_local}</fc2:BeneficialOtherLocal>
+                <fc2:BeneficialOtherLocal>${this.formData.Beneficial_Other_local}</fc2:BeneficialOtherLocal><
 				<fc2:ImageAttachmentType>${this.strDocImageTyp}</fc2:ImageAttachmentType>
 				<fc2:ImageAttachmentFileName>${this.strIDocImag}</fc2:ImageAttachmentFileName>
             </fc2:BeneficialOwner>
