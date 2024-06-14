@@ -719,7 +719,7 @@
 											+
 										</button>
 										<!-- <button v-if="a === 0" disabled class="remove-btn">-</button> -->
-										<button v-if="a === 0" disabled class="remove-btn">
+										<button v-if="a === 0" disabled class="remove-btn dis">
 											-
 										</button>
 										<button v-else @click.prevent="removeApplicant(a)" class="remove-btn">
@@ -736,7 +736,7 @@
 											<label><strong>FinCEN ID</strong></label>
 										</div>
 										<div class="col-md-7">
-											<input class="form-input" type="text" v-model="formData.FinCEN_ID"
+											<input class="form-input" type="text" v-model="input.FinCEN_ID"
 												placeholder="FinCEN ID" />
 											<span v-if="formErrors.FinCEN_ID" class="error">{{
 											formErrors.FinCEN_ID
@@ -752,8 +752,7 @@
 											<label><span class="red">*</span>Individual's last name</label>
 										</div>
 										<div class="col-md-7">
-											<input class="form-input" type="text"
-												v-model="formData.Individual_last_name"
+											<input class="form-input" type="text" v-model="input.Individual_last_name"
 												placeholder="Individual's last name" />
 											<span v-if="formErrors.Individual_last_name" class="error">{{
 											formErrors.Individual_last_name }}</span>
@@ -766,7 +765,7 @@
 											<label><span class="red">*</span>First name</label>
 										</div>
 										<div class="col-md-7">
-											<input class="form-input" type="text" v-model="formData.First_name"
+											<input class="form-input" type="text" v-model="input.First_name"
 												placeholder="First name" />
 											<span v-if="formErrors.First_name" class="error">{{
 											formErrors.First_name
@@ -780,7 +779,7 @@
 											<label>Middle name</label>
 										</div>
 										<div class="col-md-7">
-											<input class="form-input" type="text" v-model="formData.Middle_name"
+											<input class="form-input" type="text" v-model="input.Middle_name"
 												placeholder="Middle name" />
 											<span v-if="formErrors.Middle_name" class="error">{{
 											formErrors.Middle_name
@@ -794,7 +793,7 @@
 											<label>Suffix</label>
 										</div>
 										<div class="col-md-7">
-											<input class="form-input" type="text" v-model="formData.Suffix"
+											<input class="form-input" type="text" v-model="input.Suffix"
 												placeholder="Suffix" />
 											<span v-if="formErrors.Suffix" class="error">{{
 											formErrors.Suffix
@@ -808,7 +807,7 @@
 											<label>Date of birth</label>
 										</div>
 										<div class="col-md-7">
-											<input class="form-input" type="date" v-model="formData.Date" />
+											<input class="form-input" type="date" v-model="input.Date" />
 											<span v-if="formErrors.Date" class="error">{{
 											formErrors.Date
 										}}</span>
@@ -826,12 +825,12 @@
 											<div class="current-radio-btn">
 												<label><span>a.</span>Business address</label>
 												<input class="radio-start mx-2" type="radio" name="business"
-													:value="true" v-model="formData.Business_beneficial" />
+													:value="true" v-model="input.Business_beneficial" />
 											</div>
 											<div class="current-radio-btn">
 												<label><span>b.</span>Residential address</label>
 												<input class="radio-start mx-2" type="radio" name="business"
-													:value="true" v-model="formData.Residential_applicant" />
+													:value="true" v-model="input.Residential_applicant" />
 											</div>
 										</div>
 									</div>
@@ -843,7 +842,7 @@
 												apt. or suite no.)</label>
 										</div>
 										<div class="col-md-7">
-											<input class="form-input" type="text" v-model="formData.Address_number"
+											<input class="form-input" type="text" v-model="input.Address_number"
 												placeholder="Address (number, street,and apt. or suite no.)" />
 											<span v-if="formErrors.Address_number" class="error">{{
 											formErrors.Address_number
@@ -857,7 +856,7 @@
 											<label><span class="red">*</span>City</label>
 										</div>
 										<div class="col-md-7">
-											<input class="form-input" type="text" v-model="formData.City_applicant"
+											<input class="form-input" type="text" v-model="input.City_applicant"
 												placeholder="City" />
 											<span v-if="formErrors.City_applicant" class="error">{{
 											formErrors.City_applicant
@@ -871,7 +870,7 @@
 											<label><span class="red">*</span>Country/Jurisdiction</label>
 										</div>
 										<div class="col-md-7">
-											<select class="form-select" v-model="formData.Country" id="Country">
+											<select class="form-select" v-model="input.Country" id="Country">
 												<option disabled>Choose...</option>
 												<option v-for="option in jurisdictionCountry" :key="option.value"
 													:value="option.value">
@@ -890,7 +889,7 @@
 											<label><span class="red">*</span>State</label>
 										</div>
 										<div class="col-md-7">
-											<select class="form-select" v-model="formData.State_applicant"
+											<select class="form-select" v-model="input.State_applicant"
 												id="State_applicant">
 												<option disabled>Choose...</option>
 												<option v-for="option in states" :key="option.value"
@@ -911,7 +910,7 @@
 												code</label>
 										</div>
 										<div class="col-md-7">
-											<input class="form-input" type="text" v-model="formData.Foreign_postal"
+											<input class="form-input" type="text" v-model="input.Foreign_postal"
 												placeholder="ZIP/Foreign postal code" />
 											<span v-if="formErrors.Foreign_postal" class="error">{{
 											formErrors.Foreign_postal
@@ -928,7 +927,7 @@
 												type</label>
 										</div>
 										<div class="col-md-7">
-											<select class="form-select" v-model="formData.Identififying_document"
+											<select class="form-select" v-model="input.Identififying_document"
 												id="Identififying_document">
 												<option disabled>Choose...</option>
 												<option v-for="option in document" :key="option.value"
@@ -948,8 +947,7 @@
 												number</label>
 										</div>
 										<div class="col-md-7">
-											<input class="form-input" type="text"
-												v-model="formData.Identififying_number"
+											<input class="form-input" type="text" v-model="input.Identififying_number"
 												placeholder="Identifying document number" />
 											<span v-if="formErrors.Identififying_number" class="error">{{
 											formErrors.Identififying_number }}</span>
@@ -969,7 +967,7 @@
 													<label>Country/Jurisdiction</label>
 												</div>
 												<div class="col-md-7">
-													<select class="form-select" v-model="formData.Country_jurisdiction"
+													<select class="form-select" v-model="input.Country_jurisdiction"
 														id="Country">
 														<option disabled>Choose...</option>
 														<option v-for="option in jurisdictionCountry"
@@ -988,7 +986,7 @@
 													<label>State</label>
 												</div>
 												<div class="col-md-7">
-													<select class="form-select" v-model="formData.State_app"
+													<select class="form-select" v-model="input.State_app"
 														id="State_app">
 														<option disabled>Choose...</option>
 														<option v-for="option in states" :key="option.value"
@@ -1008,7 +1006,7 @@
 													<label>Local/Tribal</label>
 												</div>
 												<div class="col-md-7">
-													<select class="form-select" v-model="formData.local"
+													<select class="form-select" v-model="input.local"
 														id="formData.Beneficial_Local">
 														<option disabled>Choose...</option>
 														<option v-for="option in tribes" :key="option.value"
@@ -1028,7 +1026,7 @@
 													<label>Other local/Tribal description</label>
 												</div>
 												<div class="col-md-7">
-													<input class="form-input" type="text" v-model="formData.tribal_desc"
+													<input class="form-input" type="text" v-model="input.tribal_desc"
 														placeholder="Other local/Tribal description" />
 													<span v-if="formErrors.tribal_desc" class="error">{{
 											formErrors.tribal_desc
@@ -1044,17 +1042,17 @@
 											<label><span class="red">*</span>Identifying document image</label>
 										</div>
 										<div class="col-md-7">
-											<input class="file btn btn-primary" type="file" ref="fileInput"
-												@change="attachFileApplicant" />
+											<input class="file btn btn-primary" type="file" ref="'fileInput' a"
+												@change="attachFileApplicant($event, a)" />
 											<button type="button" class="file btn btn-primary mx-1"
-												@click="removeAttachmentapplicant">Remove Attachment
+												@click="removeAttachmentapplicant(a)">Remove Attachment
 											</button><br>
 											<img v-if="attachedImageApplicant" :src="attachedImageApplicant"
 												alt="Attached Image" style="max-width: 100px; margin-top: 10px;" />
 											<!-- <input class="f-input form-input" v-if="attachedImageApplicant" v-model="attachedFileNameApplicant" readonly /> -->
-											<div v-if="attachedFileNameApplicant" class="file-name"
-												style="margin-top: 10px;">{{ attachedFileNameApplicant }}</div>
-											<div v-if="fileError" class="text-danger">{{ fileError }}</div>
+											<div v-if="input.attachedFileNameApplicant" class="file-name"
+												style="margin-top: 10px;">{{ input.attachedFileNameApplicant }}</div>
+											<div v-if="input.fileError" class="text-danger">{{ input.fileError }}</div>
 										</div>
 									</div>
 								</li>
@@ -1082,7 +1080,7 @@
 											+
 										</button>
 										<!-- <button v-if="b === 0" disabled class="remove-btn">-</button> -->
-										<button v-if="b === 0" disabled class="remove-btn">
+										<button v-if="b === 0" disabled class="remove-btn dis">
 											-
 										</button>
 										<button v-else @click.prevent="removeBeneficial(b)" class="remove-btn">
@@ -1695,7 +1693,7 @@ export default {
 		this.updateDate();
 	},
 	methods: {
-		attachFileApplicant(event) {
+		attachFileApplicant(event, index) {
 			const file = event.target.files[0];
 			if (file) {
 				this.attachedFileNameApplicant = file.name;
@@ -1774,12 +1772,20 @@ export default {
 			this.beneficial.splice(beneficial, 1);
 		},
 		addApplicant() {
-			this.applicant.push({
-				name: "",
-			});
+			// this.applicant.push({
+			// 	name: "",
+			// });
+			if (this.applicant.length < 2) {
+				this.applicant.push({ name: "" });
+			} else {
+				alert('You can add only 2 applicants.');
+			}
 		},
-		removeApplicant(applicant) {
-			this.applicant.splice(applicant, 1);
+		removeApplicant(index) {
+			// this.applicant.splice(applicant, 1);
+			if (this.applicant.length > 1) {
+				this.applicant.splice(index, 1);
+			}
 		},
 		validateForm() {
 			let isValid = true;
