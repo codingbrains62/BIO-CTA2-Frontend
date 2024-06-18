@@ -1047,7 +1047,7 @@
 											<button type="button" class="file btn btn-primary mx-1"
 												@click="removeAttachmentapplicant(a)">Remove Attachment
 											</button><br>
-											<img v-if="attachedImageApplicant" :src="attachedImageApplicant"
+											<img v-if="input.attachedImageApplicant" :src="input.attachedImageApplicant"
 												alt="Attached Image" style="max-width: 100px; margin-top: 10px;" />
 											<!-- <input class="f-input form-input" v-if="attachedImageApplicant" v-model="attachedFileNameApplicant" readonly /> -->
 											<div v-if="input.attachedFileNameApplicant" class="file-name"
@@ -1696,28 +1696,39 @@ export default {
 		attachFileApplicant(event, index) {
 			const file = event.target.files[0];
 			if (file) {
-				this.attachedFileNameApplicant = file.name;
-				this.strIDocImage = file.name;
-				this.strDocImageType = file.type;
+				// this.attachedFileNameApplicant = file.name;
+				// this.strIDocImage = file.name;
+				// this.strDocImageType = file.type;
 				const reader = new FileReader();
 				reader.onload = (e) => {
-					this.attachedImageApplicant = e.target.result;
+					// this.attachedImageApplicant = e.target.result;
+					this.applicant[index].attachedImageApplicant = e.target.result;
+          this.applicant[index].attachedFileNameApplicant = file.name;
+          this.applicant[index].fileError = '';
 				};
 				reader.readAsDataURL(file);
 			}
 		},
 		removeAttachmentapplicant() {
-			this.attachedImageApplicant = null;
-			this.attachedFileNameApplicant = '';
-			// Clear file input if needed
-			this.strIDocImage = '';
-			this.strDocImageType = '';
-
-			if (this.$refs.fileInput) {
-				this.$refs.fileInput.value = '';
+			this.applicant[index].attachedImageApplicant = null;
+			this.applicant[index].attachedFileNameApplicant = '';
+			this.applicant[index].fileError = '';
+			const fileInput = this.$refs['fileInput' + index][0];
+			if (fileInput) {
+				fileInput.value = '';
 			}
-			this.divKey++;
-		},
+			},
+			// this.attachedImageApplicant = null;
+			// this.attachedFileNameApplicant = '';
+			// Clear file input if needed
+			// this.strIDocImage = '';
+			// this.strDocImageType = '';
+
+			// if (this.$refs.fileInput) {
+			// 	this.$refs.fileInput.value = '';
+			// }
+			// this.divKey++;
+		// },
 		attachFile(event) {
 			const file = event.target.files[0];
 			if (file) {
